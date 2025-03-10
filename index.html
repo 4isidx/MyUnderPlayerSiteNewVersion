@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnderPlayer - Официальный сайт</title>
+    <meta name="description" content="Официальный сайт UnderPlayer - канала об игре Undertale. Видеообзоры, анализ сюжета и персонажей, уникальный контент">
+    <meta name="keywords" content="Undertale, UnderPlayer, игровой блог, анализ игр, гейминг">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0810;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .neon-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                linear-gradient(45deg, 
+                    rgba(101, 43, 215, 0.1) 20%, 
+                    rgba(255, 0, 212, 0.1) 80%);
+            animation: bg-pulse 8s infinite;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: #7d12ff;
+            text-shadow: 
+                0 0 10px #7d12ff,
+                0 0 20px #7d12ff,
+                0 0 30px #7d12ff;
+            animation: neon-flicker 1.5s infinite alternate;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: rgba(45, 12, 73, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+            border: 2px solid #7d12ff;
+            box-shadow: 0 0 15px rgba(125, 18, 255, 0.5);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(125, 18, 255, 0.8);
+        }
+
+        .stat-number {
+            font-size: 2.2em;
+            color: #ff28a7;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px #ff28a7;
+        }
+
+        .video-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 25px;
+            padding: 25px 0;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        .video-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .video-item {
+            flex: 0 0 320px;
+            height: 220px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #000;
+            border: 2px solid #ff28a7;
+            box-shadow: 0 0 20px rgba(255, 40, 167, 0.4);
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .section-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.5em;
+            color: #ff28a7;
+            margin: 40px 0 25px;
+            text-shadow: 
+                0 0 10px #ff28a7,
+                0 0 20px #ff28a7;
+        }
+
+        .channel-info {
+            background: rgba(25, 5, 45, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #7d12ff;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .channel-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(125, 18, 255, 0.2),
+                transparent);
+            animation: rotate 6s infinite linear;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            margin: 15px;
+            background: #7d12ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid #ff28a7;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(125, 18, 255, 0.5);
+        }
+
+        .btn:hover {
+            background: #ff28a7;
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(255, 40, 167, 0.8);
+        }
+
+        footer {
+            background: rgba(25, 5, 45, 0.9);
+            padding: 30px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 2px solid #7d12ff;
+        }
+
+        @keyframes neon-flicker {
+            0% { opacity: 0.9; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes bg-pulse {
+            0% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.3; }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .video-item {
+                flex: 0 0 280px;
+                height: 180px;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="neon-bg"></div>
+
+    <header>
+        <div class="container">
+            <h1>UnderPlayer</h1>
+            <p style="color: #a78bff; font-size: 1.2em;">Погружение в мир Undertale через профессиональный анализ и уникальный контент</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1.5 мес</div>
+                <div>Динамичный рост</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div>Преданных фанатов</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8000+</div>
+                <div>Общих просмотров</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">14</div>
+                <div>Уникальных видео</div>
+            </div>
+        </section>
+
+        <h2 class="section-title">Лучшие работы</h2>
+        <div class="video-carousel">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/mqMNHMyJIlA" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/NjR7mJ6muhk" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/zwxLIQSj3IM" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <section class="channel-info">
+            <h2 class="section-title">О проекте</h2>
+            <div style="position: relative; z-index: 1;">
+                <p>🎮 Профессиональный разбор игровых механик Undertale</p>
+                <p>🎬 1080p-качество съёмки и отличный монтаж</p>
+                <p>📈 SEO-оптимизация через VidIQ</p>
+                <p>🎯 Цель: Создать крупнейшее RU-сообщество по Undertale</p>
+            </div>
+        </section>
+
+        <section class="links-section">
+            <a href="https://youtube.com/@underplayer289" class="btn">🎥 YouTube</a>
+            <a href="https://t.me/UnderPlayer347" class="btn">📢 Telegram</a>
+            <a href="https://www.donationalerts.com/r/underplayer321" class="btn">💎 Поддержать</a>
+        </section>
+
+        <section class="channel-info" style="margin-top: 50px;">
+            <h2 class="section-title">Наши преимущества</h2>
+            <div style="position: relative; z-index: 1;">
+                <p>🔥 Экспертный уровень анализа сюжета (и создания музыки нейросетями)</p>
+                <p>⏱️ Оптимальная длительность видео </p>
+                <p>💡 Уникальные монтажные решения</p>
+                <p>📅 Выпуск контента</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="color: #a78bff;">© 2025 UnderPlayer. Все права защищены</p>
+            <div style="margin-top: 20px;">
+                <a href="https://t.me/UnderPlayer347" class="btn" style="padding: 8px 20px; font-size: 0.9em;">Telegram</a>
+                <a href="https://www.donationalerts.com/r/underplayer321" class="btn" style="padding: 8px 20px; font-size: 0.9em;">DonationAlerts</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Автоматическая прокрутка карусели
+        const carousel = document.querySelector('.video-carousel');
+        let scrollAmount = 0;
+        const scrollStep = 320 + 25; // Ширина видео + отступ
+        
+        setInterval(() => {
+            if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+                scrollAmount = 0;
+            } else {
+                scrollAmount += scrollStep;
+            }
+            carousel.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }, 5000);
+
+        // Анимация при загрузке
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.stat-card, .btn, .video-item');
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+            });
+            
+            setTimeout(() => {
+                elements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.transition = 'opacity 0.5s, transform 0.5s';
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>
