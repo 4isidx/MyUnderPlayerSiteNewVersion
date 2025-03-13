@@ -605,6 +605,19 @@
             </div>
         </section>
 
+        <section id="submit-review" class="channel-info slideInUp extra-padding">
+            <h2 class="section-title">Оставить отзыв</h2>
+            <div style="position: relative; z-index: 1;" class="enhanced-text">
+                <form id="review-form" action="submit_review.php" method="post">
+                    <label for="username">Ваше имя:</label>
+                    <input type="text" id="username" name="username" required placeholder="Введите ваше имя..." style="width:100%; padding: 10px; margin-bottom: 10px;">
+                    <label for="review">Ваш отзыв:</label>
+                    <textarea id="review" name="review" required placeholder="Ваш отзыв..." rows="4" style="width:100%; padding: 10px; margin-bottom: 10px;"></textarea>
+                    <button type="submit" class="btn" style="padding: 10px 20px;">Отправить отзыв</button>
+                </form>
+            </div>
+        </section>
+
         <section id="blog" class="channel-info slideInLeft extra-padding">
             <h2 class="section-title">Интерактивный блог</h2>
             <div style="position: relative; z-index: 1;" class="enhanced-text">
