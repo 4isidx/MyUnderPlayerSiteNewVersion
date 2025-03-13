@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UnderPlayer - Официальный сайт</title>
-    <meta name="description" content="Официальный сайт UnderPlayer - канала об игре Undertale. Видеообзоры, анализ сюжета и персонажей, уникальный контент">
-    <meta name="keywords" content="Undertale, UnderPlayer, игровой блог, анализ игр, гейминг">
+    <meta name="description" content="Официальный сайт UnderPlayer - канал о игре Undertale с глубоким анализом, уникальным контентом и качественными видео. Обширная информация, вдохновляющие истории и новости в области гейминга.">
+    <meta name="keywords" content="Undertale, UnderPlayer, игровой блог, анализ игр, гейминг, новости, истории, отзывы, видео обзор">
+    <link rel="canonical" href="http://example.com">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="UnderPlayer - Официальный сайт">
+    <meta property="og:description" content="Узнайте все о мире Undertale, профессиональный анализ, новости, истории, отзывы и многое другое.">
+    <meta property="og:image" content="path/to/image.jpg">
+    <meta property="og:url" content="http://example.com">
+    <meta property="og:type" content="website">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UnderPlayer - Официальный сайт">
+    <meta name="twitter:description" content="Погружение в мир Undertale через качественные видео, анализ и новости.">
+    <meta name="twitter:image" content="path/to/image.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         * {
@@ -360,129 +373,314 @@
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        .fadeInUp {
+            animation: fadeInUp 1s ease-out both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .rotateIn {
+            animation: rotateIn 1s ease-in-out both;
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-200deg);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0deg);
+            }
+        }
+
+        .scaleUp {
+            animation: scaleUp 1s ease-out both;
+        }
+
+        @keyframes scaleUp {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .enhanced-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            text-align: justify;
+        }
+
+        .extra-padding {
+            padding: 40px 20px;
+        }
+
+        .slideInLeft {
+            animation: slideInLeft 1s ease-out both;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slideInRight {
+            animation: slideInRight 1s ease-out both;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slideInDown {
+            animation: slideInDown 1s ease-out both;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "http://example.com",
+      "name": "UnderPlayer - Официальный сайт",
+      "publisher": {
+          "@type": "Organization",
+          "name": "UnderPlayer",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "path/to/image.jpg"
+          }
+      }
+    }
+    </script>
 </head>
 <body>
     <div class="neon-bg"></div>
     
-    <nav>
+    <nav class="slideInDown">
         <ul>
             <li><a href="#home">Главная</a></li>
             <li><a href="#videos">Видео</a></li>
             <li><a href="#about">О нас</a></li>
+            <li><a href="#news">Новости</a></li>
+            <li><a href="#history">История</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#blog">Блог</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Контакты</a></li>
+            <li><a href="#innovations">Нововведения</a></li>
         </ul>
     </nav>
 
-    <header id="home">
+    <header id="home" class="slideInDown">
         <div class="container">
-            <h1>UnderPlayer</h1>
-            <p style="color: #a78bff; font-size: 1.2em;">Погружение в мир Undertale через профессиональный анализ и уникальный контент</p>
+            <h1 class="fadeInUp">UnderPlayer</h1>
+            <p class="enhanced-text fadeInUp" style="color: #a78bff; font-size: 1.2em;">
+                Погружение в мир Undertale через глубокий профессиональный анализ, уникальные видео и вдохновляющий контент.
+                Здесь вы найдете исчерпывающую информацию о всех аспектах игры, аналитические обзоры, а также эксклюзивные новости и истории канала.
+            </p>
         </div>
     </header>
 
     <div class="container">
-        <section class="stats-grid">
-            <div class="stat-card">
+        <section class="stats-grid slideInUp">
+            <div class="stat-card scaleUp">
                 <div class="stat-number">1.5 мес</div>
-                <div>Динамичный рост</div>
+                <div>Динамичный рост аудитории</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">50+</div>
+            <div class="stat-card scaleUp">
+                <div class="stat-number">60+</div>
                 <div>Преданных фанатов</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">8000+</div>
+            <div class="stat-card scaleUp">
+                <div class="stat-number">8500+</div>
                 <div>Общих просмотров</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card scaleUp">
                 <div class="stat-number">19</div>
                 <div>Уникальных видео</div>
             </div>
         </section>
 
-        <h2 class="section-title">Лучшие работы</h2>
-        <div class="video-carousel">
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/mqMNHMyJIlA" frameborder="0" allowfullscreen></iframe>
+        <h2 class="section-title slideInRight">Лучшие работы</h2>
+        <div class="video-carousel slideInRight">
+            <div class="video-item scaleUp">
+                <iframe src="https://www.youtube.com/embed/mqMNHMyJIlA?si=l-8M_c9sYADnA0zk" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/NjR7mJ6muhk" frameborder="0" allowfullscreen></iframe>
+            <div class="video-item scaleUp">
+                <iframe src="https://www.youtube.com/embed/71-fVOH6rQs?si=J1tmpr3gPni5Ng7I" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/zwxLIQSj3IM" frameborder="0" allowfullscreen></iframe>
+            <div class="video-item scaleUp">
+                <iframe src="https://www.youtube.com/embed/lcUHnDaVkvA?si=jhc4mkozmoM9GmYz" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item scaleUp">
+                <iframe src="https://www.youtube.com/embed/Z2AVYYP6Xuc?si=4broi3EckFTGXfP1" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item scaleUp">
+                <iframe src="https://www.youtube.com/embed/d43TZOFNEPo?si=CAC_FWQRG5ldxGss" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item scaleUp">
+                <iframe src="https://www.youtube.com/embed/zwxLIQSj3IM?si=ldQTKISf6c0DwnB2" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
 
-        <section class="channel-info">
+        <section id="about" class="channel-info slideInLeft extra-padding">
             <h2 class="section-title">О проекте</h2>
-            <div style="position: relative; z-index: 1;">
-                <p>🎮 Профессиональный разбор игровых механик Undertale</p>
-                <p>🎬 1080p-качество съёмки и отличный монтаж</p>
-                <p>📈 SEO-оптимизация через VidIQ</p>
-                <p>🎯 Цель: Создать крупнейшее RU-сообщество по Undertale</p>
+            <div style="position: relative; z-index: 1;" class="enhanced-text">
+                <p>🎮 Это проект, посвященный глубокому анализу игровых механик Undertale. Мы создаем детальные видеообзоры, раскрывая тайные особенности игры, рассуждая о сюжете и анализируя персонажей.</p>
+                <p>🎬 Наш контент отличается высоким качеством съемки, продуманным монтажом и креативной подачей информации. Мы стремимся не только развлечь, но и образовать нашу аудиторию, предлагая уникальный взгляд на любимую игру.</p>
+                <p>📈 Используем передовые методы SEO оптимизации для привлечения новой аудитории и повышения рейтинга в поисковых системах. Аналитика помогает нам совершенствовать контент и оперативно реагировать на запросы пользователей.</p>
+                <p>🎯 Наша миссия – создать крупнейшее сообщество, объединенное любовью к Undertale, где каждый найдет для себя что-то ценное и вдохновляющее.</p>
+                <p>Дополнительная информация: мы постоянно обновляем наши видео, проводим эксклюзивные интервью и делимся закадровыми историями, чтобы дать вам полное представление о нашем творческом процессе.</p>
             </div>
         </section>
 
-        <section class="links-section">
-            <a href="https://youtube.com/@underplayer289" class="btn">🎥 YouTube</a>
-            <a href="https://t.me/UnderPlayer347" class="btn">📢 Telegram</a>
-            <a href="https://www.donationalerts.com/r/underplayer321" class="btn">💎 Поддержать</a>
-        </section>
-
-        <section class="channel-info" style="margin-top: 50px;">
-            <h2 class="section-title">Наши преимущества</h2>
-            <div style="position: relative; z-index: 1;">
-                <p class="neon-text">🔥 Экспертный уровень анализа сюжета и создания музыки нейросетями</p>
-                <p class="neon-text">⏱️ Оптимальная длительность видео для максимального погружения</p>
-                <p class="neon-text">💡 Уникальные монтажные решения и визуальные эффекты</p>
-                <p class="neon-text">📅 Регулярный выпуск качественного контента</p>
-                <p class="neon-text">🎮 Глубокое понимание игровой механики и секретов Undertale</p>
-                <p class="neon-text">🎨 Оригинальные теории и интерпретации сюжета</p>
-                <p class="neon-text">🌟 Интерактивное сообщество с активными обсуждениями и поддержкой</p>
-                <p class="neon-text">📊 Аналитика и статистика для улучшения контента</p>
+        <section id="news" class="channel-info slideInRight extra-padding">
+            <h2 class="section-title">Новости канала</h2>
+            <div style="position: relative; z-index: 1;" class="enhanced-text">
+                <p>Следите за последними обновлениями: у нас регулярно появляются анонсы новых видео, новости о разработке и эксклюзивные интервью.</p>
+                <p>📅 <strong>27 апреля 2025:</strong> Новый видеообзор, раскрывающий тайные механики Undertale, уже доступен!</p>
+                <p>📅 <strong>15 апреля 2025:</strong> Обновлен раздел новостей — свежие статьи о трендах в мире игр и аналитика популярных проектов.</p>
+                <p>📅 <strong>1 апреля 2025:</strong> Анонс новой серии видео, посвященной истории и эволюции Undertale. Не пропустите!</p>
+                <p>Наши новости благодаря оперативному обновлению контента всегда держат вас в курсе всех событий и нововведений в мире игровых обзоров.</p>
             </div>
         </section>
 
-        <section id="transitions" class="channel-info">
-            <h2 class="section-title">Плавные переходы</h2>
-            <div style="position: relative; z-index: 1;">
-                <p class="neon-text">🔄 Плавные переходы между разделами для лучшего восприятия</p>
-                <p class="neon-text">🎥 Качественные переходы в видео для удержания внимания зрителей</p>
-                <p class="neon-text">🔗 Интерактивные элементы для вовлечения аудитории</p>
+        <section id="history" class="channel-info slideInLeft extra-padding">
+            <h2 class="section-title">История канала</h2>
+            <div style="position: relative; z-index: 1;" class="enhanced-text">
+                <p>Наш путь начался менее года назад и с тех пор мы прошли длинный путь от скромного проекта до полноценного онлайн-сообщества. Каждая идея, каждый выпуск — это шаг к нашим амбициозным целям.</p>
+                <p>Мы экспериментировали с форматами, техническими решениями и стилем подачи, чтобы создать уникальный и запоминающийся контент. Наш опыт — это множество ошибок, ценный урок и, в итоге, успех.</p>
+                <p>История канала — это история вдохновения, творчества и постоянного самосовершенствования. Мы благодарны каждому зрителю и продолжаем стремиться к новым вершинам.</p>
+                <p>В будущем планируем расширять тематику и выпускать еще больше материалов, чтобы каждый мог найти что-то интересное для себя.</p>
             </div>
         </section>
 
-        <section id="faq" class="faq-section">
-            <h2 class="section-title">Часто задаваемые вопросы</h2>
-            <div class="faq-item glowing-border">
+        <section id="reviews" class="channel-info slideInRight extra-padding">
+            <h2 class="section-title">Отзывы зрителей</h2>
+            <div style="position: relative; z-index: 1;" class="enhanced-text">
+                <p>Наши зрители делятся своими впечатлениями, и мы ценим каждое мнение:</p>
+                <p><strong>BobbyZimber:</strong> Голос хорошо поставленный и сдержанный ответы на коменты грамотные никаких шуток вот он настоящий ютубер</p>
+                <p><strong>VaskaSanitar:</strong> Удачи</p>
+                <p><strong>life218:</strong> Для мелкого школьника у тебя всё очень важно звучит. Извини, если звучит грубо, я ведь не знаю твой возраст, но предпологаю, что ты в начальных классах.</p>
+                <p>Мы внимательно читаем все комментарии и стремимся сделать контент еще более полезным и интересным.</p>
+            </div>
+        </section>
+
+        <section id="blog" class="channel-info slideInLeft extra-padding">
+            <h2 class="section-title">Интерактивный блог</h2>
+            <div style="position: relative; z-index: 1;" class="enhanced-text">
+                <p>Блог UnderPlayer – это площадка для глубокого анализа, интервью, историй и свежих идей. Здесь мы публикуем статьи, обзоры и эксклюзивные материалы, связанные с игровым миром Undertale.</p>
+                <p>Читайте наши публикации, участвуйте в обсуждениях и делитесь своим мнением – это помогает каналу расти и развиваться.</p>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section extra-padding slideInUp">
+            <h2 class="section-title">Расширенные Часто задаваемые вопросы</h2>
+            <div class="faq-item glowing-border scaleUp">
                 <div class="faq-question">Как часто выходят новые видео?</div>
-                <div class="faq-answer">Мы выпускаем 2-3 видео в неделю, каждое из которых тщательно проработано и наполнено уникальным контентом.</div>
+                <div class="faq-answer enhanced-text">
+                    Мы стремимся выпускать 2-3 качественных видео каждую неделю. Каждый выпуск проходит тщательную подготовку, чтобы обеспечить высокий уровень информации и качества.
+                </div>
             </div>
-            <div class="faq-item glowing-border">
-                <div class="faq-question">Можно ли предложить идею для видео?</div>
-                <div class="faq-answer">Конечно! Мы всегда открыты для предложений от нашего сообщества. Пишите свои идеи в комментариях или в нашем Telegram-канале.</div>
+            <div class="faq-item glowing-border scaleUp">
+                <div class="faq-question">Можно ли предложить тему для видео?</div>
+                <div class="faq-answer enhanced-text">
+                    Безусловно! Мы всегда рады вашим идеям. Вы можете оставлять комментарии, писать в Telegram или обращаться через форму обратной связи на сайте.
+                </div>
             </div>
-            <div class="faq-item glowing-border">
-                <div class="faq-question">Как поддержать канал?</div>
-                <div class="faq-answer">Вы можете поддержать нас через DonationAlerts, подписаться на канал, включить уведомления и делиться видео с друзьями.</div>
+            <div class="faq-item glowing-border scaleUp">
+                <div class="faq-question">Какие способы поддержки канала существуют?</div>
+                <div class="faq-answer enhanced-text">
+                    Вы можете поддержать нас подпиской, донатами через DonationAlerts или делиться видео с друзьями. Любая поддержка очень важна для нас.
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="channel-info">
+        <section id="contact" class="channel-info slideInLeft extra-padding">
             <h2 class="section-title">Свяжитесь с нами</h2>
-            <div style="position: relative; z-index: 1;" class="contact-info">
-                <p class="neon-text">📧 Email: underplayer673@gmail.com</p>
-                <p class="neon-text">📱 Telegram: @UnderPlayer347</p>
-                <p class="neon-text">🎮 Discord: coming soon</p>
+            <div class="contact-info enhanced-text" style="position: relative; z-index: 1;">
+                <p>📧 <strong>Email:</strong> underplayer673@gmail.com</p>
+                <p>📱 <strong>Telegram:</strong> @UnderPlayer347</p>
+                <p>🎮 <strong>Discord:</strong> скоро в разработке</p>
+                <p>Мы всегда рады вашим вопросам, предложениям и отзывам. Ваше мнение помогает нам улучшаться!</p>
+            </div>
+        </section>
+
+        <section id="innovations" class="channel-info slideInRight extra-padding">
+            <h2 class="section-title">Новые возможности и SEO оптимизация</h2>
+            <div class="enhanced-text" style="position: relative; z-index: 1;">
+                <p>Мы используем передовые технологии для повышения качества контента, включая современные методы SEO оптимизации, глубокую аналитику и инновационные анимационные решения.</p>
+                <ul class="enhanced-text">
+                    <li>Улучшенные алгоритмы SEO для повышения видимости сайта.</li>
+                    <li>Расширенная аналитика просмотров и вовлеченности аудитории.</li>
+                    <li>Современные анимационные эффекты, делающие переходы между разделами плавными и эффектными.</li>
+                    <li>Интерактивные элементы, которые улучшают пользовательский опыт.</li>
+                    <li>Адаптивный дизайн для оптимального отображения на всех устройствах.</li>
+                </ul>
+                <p>Эти нововведения делают сайт более функциональным, привлекательным и удобным как для пользователей, так и для поисковых систем.</p>
+            </div>
+        </section>
+
+        <section id="extra-content" class="extra-padding slideInUp">
+            <h2 class="section-title">Дополнительная информация</h2>
+            <div class="enhanced-text" style="position: relative; z-index:1;">
+                <p>В этом разделе мы собрали самые подробные руководства, истории успеха наших зрителей, аналитические обзоры и эксклюзивные интервью. Здесь вы найдете массу полезного материала, который не попал в основные разделы сайта.</p>
+                <p>Мы обновляем этот раздел регулярно, чтобы каждый посетитель мог найти ответы на все свои вопросы и узнать что-то новое о мире Undertale и не только.</p>
+                <ul class="enhanced-text">
+                    <li><strong>Руководства:</strong> Подробные инструкции по использованию современных инструментов анализа игр.</li>
+                    <li><strong>Истории успеха:</strong> Реальные примеры того, как наши видео помогли людям в достижении целей.</li>
+                    <li><strong>Аналитика трендов:</strong> Глубокий анализ мировых игровых трендов и обзоры новейших технологий.</li>
+                    <li><strong>Интервью:</strong> Беседы с экспертами игровой индустрии о будущем и развитии игр.</li>
+                    <li><strong>Технические статьи:</strong> Подробное описание используемых методов SEO и оптимизации контента.</li>
+                </ul>
             </div>
         </section>
     </div>
 
-    <footer>
+    <footer class="slideInUp">
         <div class="container">
-            <p style="color: #a78bff;">© 2025 UnderPlayer. Все права защищены</p>
+            <p style="color: #a78bff;">
+                © 2025 UnderPlayer. Все права защищены. Наш сайт постоянно обновляется с целью предоставления самой свежей и качественной информации о мире Undertale.
+            </p>
             <div style="margin-top: 20px;">
                 <a href="https://t.me/UnderPlayer347" class="btn" style="padding: 8px 20px; font-size: 0.9em;">Telegram</a>
                 <a href="https://www.donationalerts.com/r/underplayer321" class="btn" style="padding: 8px 20px; font-size: 0.9em;">DonationAlerts</a>
@@ -491,13 +689,12 @@
     </footer>
 
     <script>
-        // Автоматическая прокрутка карусели
         const carousel = document.querySelector('.video-carousel');
         let scrollAmount = 0;
-        const scrollStep = 320 + 25; // Ширина видео + отступ
+        const scrollStep = 320 + 25;
         
         setInterval(() => {
-            if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+            if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
                 scrollAmount = 0;
             } else {
                 scrollAmount += scrollStep;
@@ -507,8 +704,7 @@
                 behavior: 'smooth'
             });
         }, 5000);
-
-        // Анимация при загрузке
+        
         document.addEventListener('DOMContentLoaded', () => {
             const elements = document.querySelectorAll('.stat-card, .btn, .video-item');
             elements.forEach(el => {
@@ -526,15 +722,13 @@
                 });
             }, 500);
         });
-
-        // FAQ секция
+        
         document.querySelectorAll('.faq-item').forEach(item => {
             item.addEventListener('click', () => {
                 item.classList.toggle('active');
             });
         });
-
-        // Плавная прокрутка для навигации
+        
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -546,12 +740,8 @@
                 });
             });
         });
-
-        // Анимация появления элементов при скролле
-        const observerOptions = {
-            threshold: 0.1
-        };
-
+        
+        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -560,7 +750,7 @@
                 }
             });
         }, observerOptions);
-
+        
         document.querySelectorAll('.channel-info, .faq-item, .latest-video-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
