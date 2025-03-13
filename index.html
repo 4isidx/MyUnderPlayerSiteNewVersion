@@ -20,6 +20,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+            font-family: 'Arial', sans-serif;
         }
 
         .neon-bg {
@@ -31,8 +32,11 @@
             z-index: -1;
             background: 
                 linear-gradient(45deg, 
-                    rgba(101, 43, 215, 0.1) 20%, 
-                    rgba(255, 0, 212, 0.1) 80%);
+                    rgba(101, 43, 215, 0.15) 20%, 
+                    rgba(255, 0, 212, 0.15) 80%),
+                radial-gradient(circle at 50% 50%,
+                    rgba(125, 18, 255, 0.1) 0%,
+                    rgba(255, 40, 167, 0.1) 100%);
             animation: bg-pulse 8s infinite;
         }
 
@@ -211,12 +215,167 @@
                 padding: 12px 25px;
             }
         }
+
+        nav {
+            background: rgba(25, 5, 45, 0.9);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #7d12ff;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8em;
+            transition: 0.3s;
+            text-shadow: 0 0 5px #7d12ff;
+        }
+
+        nav a:hover {
+            color: #ff28a7;
+            text-shadow: 0 0 10px #ff28a7;
+        }
+
+        .glowing-border {
+            position: relative;
+        }
+
+        .glowing-border::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #7d12ff, #ff28a7);
+            border-radius: 17px;
+            z-index: -1;
+            animation: border-glow 3s infinite;
+        }
+
+        @keyframes border-glow {
+            0% { opacity: 0.5; filter: blur(3px); }
+            50% { opacity: 1; filter: blur(1px); }
+            100% { opacity: 0.5; filter: blur(3px); }
+        }
+
+        .neon-text {
+            color: #fff;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #7d12ff,
+                0 0 20px #7d12ff;
+            animation: neon-pulse 2s infinite;
+        }
+
+        @keyframes neon-pulse {
+            0% { text-shadow: 0 0 5px #fff, 0 0 10px #7d12ff, 0 0 20px #7d12ff; }
+            50% { text-shadow: 0 0 10px #fff, 0 0 20px #7d12ff, 0 0 30px #7d12ff; }
+            100% { text-shadow: 0 0 5px #fff, 0 0 10px #7d12ff, 0 0 20px #7d12ff; }
+        }
+
+        .latest-videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .latest-video-card {
+            background: rgba(45, 12, 73, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 2px solid #7d12ff;
+        }
+
+        .latest-video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(125, 18, 255, 0.8);
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-title {
+            font-size: 1.2em;
+            color: #ff28a7;
+            margin-bottom: 10px;
+        }
+
+        .video-description {
+            color: #a78bff;
+            font-size: 0.9em;
+        }
+
+        .faq-section {
+            margin: 60px 0;
+        }
+
+        .faq-item {
+            background: rgba(45, 12, 73, 0.8);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            padding: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 2px solid #7d12ff;
+        }
+
+        .faq-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 0 20px rgba(125, 18, 255, 0.6);
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: #ff28a7;
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: #a78bff;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
     <div class="neon-bg"></div>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#videos">Видео</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
 
-    <header>
+    <header id="home">
         <div class="container">
             <h1>UnderPlayer</h1>
             <p style="color: #a78bff; font-size: 1.2em;">Погружение в мир Undertale через профессиональный анализ и уникальный контент</p>
@@ -224,24 +383,24 @@
     </header>
 
     <div class="container">
-<section class="stats-grid">
-    <div class="stat-card">
-        <div class="stat-number">1.5 мес</div>
-        <div>Динамичный рост</div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-number">50+</div>
-        <div>Преданных фанатов</div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-number">8000+</div>
-        <div>Общих просмотров</div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-number">17</div> <!-- Здесь исправлено -->
-        <div>Уникальных видео</div>
-    </div>
-</section>
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1.5 мес</div>
+                <div>Динамичный рост</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div>Преданных фанатов</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8000+</div>
+                <div>Общих просмотров</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">19</div>
+                <div>Уникальных видео</div>
+            </div>
+        </section>
 
         <h2 class="section-title">Лучшие работы</h2>
         <div class="video-carousel">
@@ -272,16 +431,53 @@
             <a href="https://www.donationalerts.com/r/underplayer321" class="btn">💎 Поддержать</a>
         </section>
 
-<section class="channel-info" style="margin-top: 50px;">
-    <h2 class="section-title">Наши преимущества</h2>
-    <div style="position: relative; z-index: 1;">
-        <p>🔥 Экспертный уровень анализа сюжета (и создания музыки нейросетями)</p>
-        <p>⏱️ Оптимальная длительность видео</p>
-        <p>🎬 17 уникальных видео в архиве</p> <!-- Добавлена новая строка -->
-        <p>💡 Уникальные монтажные решения</p>
-        <p>📅 Выпуск контента</p>
-    </div>
-</section>
+        <section class="channel-info" style="margin-top: 50px;">
+            <h2 class="section-title">Наши преимущества</h2>
+            <div style="position: relative; z-index: 1;">
+                <p class="neon-text">🔥 Экспертный уровень анализа сюжета и создания музыки нейросетями</p>
+                <p class="neon-text">⏱️ Оптимальная длительность видео для максимального погружения</p>
+                <p class="neon-text">💡 Уникальные монтажные решения и визуальные эффекты</p>
+                <p class="neon-text">📅 Регулярный выпуск качественного контента</p>
+                <p class="neon-text">🎮 Глубокое понимание игровой механики и секретов Undertale</p>
+                <p class="neon-text">🎨 Оригинальные теории и интерпретации сюжета</p>
+                <p class="neon-text">🌟 Интерактивное сообщество с активными обсуждениями и поддержкой</p>
+                <p class="neon-text">📊 Аналитика и статистика для улучшения контента</p>
+            </div>
+        </section>
+
+        <section id="transitions" class="channel-info">
+            <h2 class="section-title">Плавные переходы</h2>
+            <div style="position: relative; z-index: 1;">
+                <p class="neon-text">🔄 Плавные переходы между разделами для лучшего восприятия</p>
+                <p class="neon-text">🎥 Качественные переходы в видео для удержания внимания зрителей</p>
+                <p class="neon-text">🔗 Интерактивные элементы для вовлечения аудитории</p>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <div class="faq-item glowing-border">
+                <div class="faq-question">Как часто выходят новые видео?</div>
+                <div class="faq-answer">Мы выпускаем 2-3 видео в неделю, каждое из которых тщательно проработано и наполнено уникальным контентом.</div>
+            </div>
+            <div class="faq-item glowing-border">
+                <div class="faq-question">Можно ли предложить идею для видео?</div>
+                <div class="faq-answer">Конечно! Мы всегда открыты для предложений от нашего сообщества. Пишите свои идеи в комментариях или в нашем Telegram-канале.</div>
+            </div>
+            <div class="faq-item glowing-border">
+                <div class="faq-question">Как поддержать канал?</div>
+                <div class="faq-answer">Вы можете поддержать нас через DonationAlerts, подписаться на канал, включить уведомления и делиться видео с друзьями.</div>
+            </div>
+        </section>
+
+        <section id="contact" class="channel-info">
+            <h2 class="section-title">Свяжитесь с нами</h2>
+            <div style="position: relative; z-index: 1;" class="contact-info">
+                <p class="neon-text">📧 Email: underplayer673@gmail.com</p>
+                <p class="neon-text">📱 Telegram: @UnderPlayer347</p>
+                <p class="neon-text">🎮 Discord: coming soon</p>
+            </div>
+        </section>
     </div>
 
     <footer>
@@ -329,6 +525,47 @@
                     }, index * 100);
                 });
             }, 500);
+        });
+
+        // FAQ секция
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Плавная прокрутка для навигации
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Анимация появления элементов при скролле
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.channel-info, .faq-item, .latest-video-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+            observer.observe(el);
         });
     </script>
 </body>
