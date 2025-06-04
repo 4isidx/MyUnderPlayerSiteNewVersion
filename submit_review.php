@@ -1,12 +1,16 @@
 <?php
 // Параметры подключения к базе данных
-$servername = "localhost";
-$db_username = "co83545_under"; // Замените на ваше имя пользователя БД
-$db_password = "4Isi1362!"; // Замените на ваш пароль БД
-$dbname = "underplayer"; // Название вашей БД
+$servername = getenv('DB_HOST') ?: 'localhost';
+$db_username = getenv('DB_USER') ?: 'user';
+$db_password = getenv('DB_PASS') ?: 'password';
+$dbname = getenv('DB_NAME') ?: 'underplayer';
 
 // Создаем соединение
 $conn = new mysqli($servername, $db_username, $db_password, $dbname);
+
+function sanitize($value) {
+    return htmlspecialchars(trim($value), ENT_QUOTES, 'UTF-8');
+}
 
 // Проверка соединения
 if ($conn->connect_error) {
@@ -15,8 +19,8 @@ if ($conn->connect_error) {
 
 // Проверка метода POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $user_name = trim($_POST["username"]);
-    $review_text = trim($_POST["review"]);
+    $user_name = sanitize($_POST["username"] ?? '');
+    $review_text = sanitize($_POST["review"] ?? '');
 
     if (!empty($user_name) && !empty($review_text)) {
         // Использование подготовленного запроса для защиты от SQL инъекций
