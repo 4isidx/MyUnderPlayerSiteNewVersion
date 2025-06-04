@@ -36,6 +36,15 @@
             font-family: 'Arial', sans-serif;
         }
 
+        body.light-mode {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        body.light-mode .neon-bg {
+            display: none;
+        }
+
         .neon-bg {
             position: fixed;
             top: 0;
@@ -474,6 +483,14 @@
                 transform: translateY(0);
             }
         }
+
+        #scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 10;
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -508,6 +525,7 @@
             <li><a href="#contact">Контакты</a></li>
             <li><a href="#innovations">Нововведения</a></li>
         </ul>
+        <button id="theme-toggle" class="btn" style="padding:8px 15px; font-size:0.8em;">Светлая тема</button>
     </nav>
 
     <header id="home" class="slideInDown">
@@ -770,6 +788,25 @@
             el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
             observer.observe(el);
         });
+
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+        document.getElementById('scroll-top').addEventListener('click', scrollToTop);
+
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scroll-top');
+            btn.style.display = window.scrollY > 200 ? 'block' : 'none';
+        });
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const btn = document.getElementById('theme-toggle');
+            btn.textContent = document.body.classList.contains('light-mode') ? 'Тёмная тема' : 'Светлая тема';
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
+    <button id="scroll-top" class="btn" aria-label="Наверх">Наверх</button>
 </body>
 </html>
