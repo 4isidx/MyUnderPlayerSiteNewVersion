@@ -12,6 +12,10 @@ transform slide_from_right:
     xalign 1.5
     linear 0.5 xalign 1.0
 
+transform slide_left_to_center:
+    xalign -0.5
+    linear 0.5 xalign 0.5
+
 label start:
     scene bg school_day with fade
 
